@@ -1,0 +1,144 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Name>wiki</Name>
+    <RootNamespace>WikiDjango</RootNamespace>
+    <InterpreterId>MSBuild|env1|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>Pytest</TestFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>152e734d-9034-4fb9-8c3e-5264391f5d24</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <DjangoSettingsModule>WikiDjango.settings</DjangoSettingsModule>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="encyclopedia\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="encyclopedia\util.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="encyclopedia\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="encyclopedia\templatetags\markdown.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="encyclopedia\templatetags\md.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="manage.py" />
+    <Compile Include="encyclopedia\admin.py" />
+    <Compile Include="encyclopedia\apps.py" />
+    <Compile Include="encyclopedia\migrations\__init__.py" />
+    <Compile Include="encyclopedia\models.py" />
+    <Compile Include="encyclopedia\tests.py" />
+    <Compile Include="encyclopedia\views.py" />
+    <Compile Include="encyclopedia\__init__.py" />
+    <Compile Include="wiki\asgi.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="wiki\__init__.py" />
+    <Compile Include="wiki\settings.py" />
+    <Compile Include="wiki\urls.py" />
+    <Compile Include="wiki\wsgi.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="encyclopedia\static\encyclopedia\styles.css" />
+    <Content Include="encyclopedia\templates\encyclopedia\create_page.html" />
+    <Content Include="encyclopedia\templates\encyclopedia\edit_page.html" />
+    <Content Include="encyclopedia\templates\encyclopedia\error.html" />
+    <Content Include="encyclopedia\templates\encyclopedia\index.html" />
+    <Content Include="encyclopedia\templates\encyclopedia\layout.html" />
+    <Content Include="encyclopedia\templates\encyclopedia\search_results.html" />
+    <Content Include="encyclopedia\templates\encyclopedia\titlepage.html" />
+    <Content Include="entries\CSS.md" />
+    <Content Include="entries\Django.md" />
+    <Content Include="entries\Git.md" />
+    <Content Include="entries\HTML.md" />
+    <Content Include="entries\Python.md" />
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="encyclopedia\" />
+    <Folder Include="encyclopedia\migrations\" />
+    <Folder Include="encyclopedia\templates\encyclopedia\" />
+    <Folder Include="encyclopedia\templatetags\" />
+    <Folder Include="encyclopedia\static\" />
+    <Folder Include="encyclopedia\static\encyclopedia\" />
+    <Folder Include="encyclopedia\templates\" />
+    <Folder Include="entries\" />
+    <Folder Include="wiki\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env1\">
+      <Id>env1</Id>
+      <Version>3.7</Version>
+      <Description>env1 (Python 3.7 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
